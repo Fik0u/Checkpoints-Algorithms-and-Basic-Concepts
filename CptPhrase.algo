@@ -13,7 +13,7 @@ BEGIN
  Write("Comptez le nombre de caractères dans la phrase");
  Read(ph);
 
-     car_courant:= ph[0]      //Le compte va etre initialiser ici avec le premier caractère qui est un S
+     car_courant:= ph[0]      //Le compte va etre initialisé ici avec le premier caractère qui est un S
  WHILE (car_courant <> '.') DO
      cpt_car:= cpt_car+1;     // Tant que le caractère courant ne correspond pas au point d'arret, la boucle continue et le compteur est incrémenté.
 
