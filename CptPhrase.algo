@@ -1,0 +1,43 @@
+ALGORITHM Cpt_phrase
+VAR
+     cpt_car, cpt_mot, cpt_voy: INTEGER;
+     car_courant: CHAR;
+     ph: STRING;
+     
+BEGIN
+
+     cpt_car:=0;
+     cpt_mot:=0;
+     cpt_voy:=0;
+
+ Write("Comptez le nombre de caractères dans la phrase");
+ Read(ph);
+
+     car_courant:= ph[0]      //Le compte va etre initialiser ici avec le premier caractère qui est un S
+ WHILE (car_courant <> '.') DO
+     cpt_car:= cpt_car+1;     // Tant que le caractère courant ne correspond pas au point d'arret, la boucle continue et le compteur est incrémenté.
+
+    IF (car_courant = 'A' OR car_courant = 'a' OR car_courant = 'E' OR car_courant = 'e' OR car_courant = 'I' OR car_courant = 'i' OR car_courant = 'O' OR car_courant = 'o' OR car_courant = 'U' OR car_courant = 'u' OR car_courant = 'Y' OR car_courant = 'y') THEN
+        cpt_voy:= cpt_voy+1;    // Si le caractère courant correspond à l'une des voyelles, le compteur de voyelles est incrémenté.
+    END_IF
+
+
+    IF (car_courant = ' ') THEN
+        cpt_mot= cpt_mot+1;       //Le caractère vide déclare le compte d'un mot et son compteur sera incrémenté.
+    END_IF
+
+    car_courant:= ph[cpt_car]
+END_WHILE
+
+ cpt_car:= cpt_car+1;
+  Write("Le nombre de caractères de la phrase est:", cpt_car);
+
+ cpt_mot:= cpt_mot+1;
+  Write("Le nombre de mots dans la phrase est:", cpt_mot);
+ 
+ cpt_voy:= cpt_voy+1;
+  Write("Le nombre de voyelles dans la phrase est:", cpt_voy);
+
+END
+
+La phrase : "Software Developper Bootcamp."
